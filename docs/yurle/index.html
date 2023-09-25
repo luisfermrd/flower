@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="es">
+<!-- Síguenos en todas las redes como: -->
+<!-- Faster Academy-->
+<!-- Código: Daniel Arteaga de Faster Academy-->
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flower</title>
+    <style>
+        :root {
+            --color1: #000;
+            --color2: #438e96;
+            --color3: #3b757f;
+            --color4: #f1f1f1;
+            --color5: #fff;
+            --color6: #dce00b;
+            --color7: #c7bb07;
+            --color8: #ff2d75;
+            --color9: #F23B00;
+        }
+
+        .container-flower{
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            width: 100vw;
+            top: 0;
+            left: 0;
+            z-index: 100;
+        }
+
+        .flower {
+            height: 200px;
+            width: 200px;
+            margin: 200px auto;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            position: relative;
+            /* Fondo negro para toda la página */
+
+            /* Agrega una animación de pulsación */
+            animation: pulsate 10s infinite;
+        }
+
+        /*Síguenos en todas las redes como:*/
+        /*Faster Academy*/
+        /*Código: Daniel Arteaga de Faster Academy*/
+        .text-above,
+        .text-below {
+            position: absolute;
+            text-align: center;
+            color: #fff;
+            /* Color del texto */
+            font-size: 25px;
+            /* Tamaño del texto */
+        }
+
+        .text-above {
+            top: 60px;
+            /* Ajusta la posición vertical del texto arriba de la flor */
+        }
+
+        .text-below {
+            bottom: 60px;
+            /* Ajusta la posición vertical del texto debajo de la flor */
+        }
+
+        @keyframes pulsate {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            50% {}
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .mid {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+
+            background: radial-gradient(circle, #000, #ff5e00, #000);
+
+            z-index: 4;
+
+            background-size: 5px 5px;
+
+            filter: drop-shadow(0 0 8px #682600);
+        }
+
+        /*Síguenos en todas las redes como:*/
+        /*Faster Academy*/
+        /*Código: Daniel Arteaga de Faster Academy*/
+        .Petal1 {
+            position: absolute;
+            left: 40px;
+            z-index: 3;
+
+            width: 120px;
+            height: 30px;
+            border-radius: 50%;
+
+            background: radial-gradient(circle, #ff5e00, #ffbb00);
+
+            filter: drop-shadow(0 0 5px #e05200);
+        }
+
+        .Petal1.p1 {
+            transform: rotate(22.5deg);
+        }
+
+        .Petal1.p2 {
+            transform: rotate(67.5deg);
+        }
+
+        .Petal1.p3 {
+            transform: rotate(110.5deg);
+        }
+
+        .Petal1.p4 {
+            transform: rotate(157.5deg);
+        }
+
+        .Petal2 {
+            position: absolute;
+            left: 0;
+            z-index: 2;
+
+            width: 200px;
+            height: 40px;
+            border-radius: 50%;
+
+            background: radial-gradient(circle, #ff5e00, #fbd702);
+
+            filter: drop-shadow(0 0 5px #e05200);
+        }
+
+        .Petal2.p2 {
+            transform: rotate(90deg);
+        }
+
+        .Petal2.p3 {
+            transform: rotate(45deg);
+        }
+
+        .Petal2.p4 {
+            transform: rotate(135deg);
+        }
+
+        .Petal3 {
+            position: absolute;
+            left: 0px;
+            z-index: 1;
+
+            width: 200px;
+            height: 40px;
+            border-radius: 50%;
+
+            background: radial-gradient(circle, #ff5e00, #fbd702);
+
+            filter: drop-shadow(0 0 2px #fbd702);
+        }
+
+        /*Síguenos en todas las redes como:*/
+        /*Faster Academy*/
+        /*Código: Daniel Arteaga de Faster Academy*/
+        .Petal3.p1 {
+            transform: rotate(22.5deg);
+        }
+
+        .Petal3.p2 {
+            transform: rotate(67.5deg);
+        }
+
+        .Petal3.p3 {
+            transform: rotate(110.5deg);
+        }
+
+        .Petal3.p4 {
+            transform: rotate(157.5deg);
+        }
+
+
+
+
+
+
+
+
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: var(--color1);
+        }
+
+        body .container {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        body .container .bubbles {
+            position: relative;
+            display: flex;
+        }
+
+        body .container .bubbles span {
+            position: relative;
+            min-width: 30px;
+            height: 30px;
+            background: var(--color2);
+            box-shadow: 0 0 0 10px var(--color3), 0 0 50px var(--color4), 0 0 100px var(--color5);
+            margin: 0 4px;
+            border-radius: 50%;
+            -webkit-animation: animate 15s linear infinite;
+            animation: animate 15s linear infinite;
+            -webkit-animation-duration: calc(75s / var(--i));
+            animation-duration: calc(75s / var(--i));
+        }
+
+        body .container .bubbles span:nth-child(even) {
+            background: var(--color6);
+            box-shadow: 0 0 0 10px var(--color7), 0 0 50px var(--color8), 0 0 100px var(--color9);
+        }
+
+        @-webkit-keyframes animate {
+            0% {
+                transform: translateY(100vh) scale(0);
+            }
+
+            100% {
+                transform: translateY(-10vh) scale(1);
+            }
+        }
+
+        @keyframes animate {
+            0% {
+                transform: translateY(100vh) scale(0);
+            }
+
+            100% {
+                transform: translateY(-10vh) scale(1);
+            }
+        }
+
+        /*# sourceMappingURL=styles.css.map */
+    </style>
+</head>
+
+<body>
+
+
+
+    <main class="container">
+        <div class="container-flower">
+            <div class="text-above" id="element2"></div>
+            <div class="flower">
+                <div class="mid">
+                </div>
+                <div class="Petal1 p1">
+                </div>
+                <div class="Petal1 p2">
+                </div>
+                <div class="Petal1 p3">
+                </div>
+                <div class="Petal1 p4">
+                </div>
+                <div class="Petal2 p1">
+                </div>
+                <div class="Petal2 p2">
+                </div>
+                <div class="Petal2 p3">
+                </div>
+                <div class="Petal2 p4">
+                </div>
+                <div class="Petal3 p1">
+                </div>
+                <div class="Petal3 p2">
+                </div>
+                <div class="Petal3 p3">
+                </div>
+                <div class="Petal3 p4">
+                </div>
+            </div>
+            <div class="text-below" id="element"></div>
+        </div>
+        <div class="bubbles">
+            <span style="--i:1"></span>
+            <span style="--i:12"></span>
+            <span style="--i:23"></span>
+            <span style="--i:19"></span>
+            <span style="--i:6"></span>
+            <span style="--i:13"></span>
+            <span style="--i:1"></span>
+            <span style="--i:10"></span>
+            <span style="--i:5"></span>
+            <span style="--i:24"></span>
+            <span style="--i:34"></span>
+            <span style="--i:2"></span>
+            <span style="--i:11"></span>
+            <span style="--i:30"></span>
+            <span style="--i:14"></span>
+            <span style="--i:4"></span>
+            <span style="--i:18"></span>
+            <span style="--i:16"></span>
+            <span style="--i:25"></span>
+            <span style="--i:2"></span>
+            <span style="--i:26"></span>
+            <span style="--i:31"></span>
+            <span style="--i:28"></span>
+            <span style="--i:12"></span>
+            <span style="--i:27"></span>
+            <span style="--i:10"></span>
+            <span style="--i:11"></span>
+            <span style="--i:12"></span>
+            <span style="--i:13"></span>
+            <span style="--i:14"></span>
+            <span style="--i:16"></span>
+            <span style="--i:30"></span>
+            <span style="--i:19"></span>
+            <span style="--i:10"></span>
+            <span style="--i:15"></span>
+            <span style="--i:24"></span>
+            <span style="--i:34"></span>
+            <span style="--i:22"></span>
+        </div>
+    </main>
+
+
+    <!-- Load library from the CDN -->
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+
+
+    <!-- Setup and start animation! -->
+    <script>
+        const frasesLindas = [
+            "La belleza está en el corazón.",
+            "Cada día es una oportunidad para ser feliz.",
+            "La vida es hermosa, disfrútala al máximo.",
+            "Eres especial tal y como eres.",
+            "El amor y la amistad son tesoros invaluables.",
+            "La sonrisa es el mejor maquillaje.",
+            "El éxito está en seguir adelante.",
+            "Nunca dejes de soñar.",
+            "La gratitud transforma lo que tenemos en suficiente.",
+            "La vida es un regalo, vívela con gratitud.",
+            "La amistad es un tesoro que perdura para siempre.",
+            "El respeto es la base de todas las relaciones.",
+            "El aprendizaje es un viaje que nunca termina.",
+            "La creatividad es la chispa que enciende la innovación.",
+            "La paciencia es la clave para superar los desafíos.",
+            "La felicidad está en las pequeñas cosas de la vida.",
+            "El amor nunca falla, siempre encuentra una manera.",
+            "Cada día es una nueva oportunidad para aprender.",
+            "La música es el lenguaje del alma.",
+            "La esperanza es la luz que guía nuestro camino.",
+            "La familia es el refugio del corazón.",
+            "La bondad es un idioma que todos pueden entender.",
+            "El optimismo es el combustible del alma.",
+            "La vida es un regalo precioso, cuídala.",
+            "La empatía nos conecta a todos como seres humanos.",
+            "La sonrisa es el puente que une a las personas.",
+            "El amor propio es el inicio de un amor duradero.",
+            "El abrazo de un amigo es medicina para el alma.",
+            "La naturaleza nos regala belleza y serenidad.",
+            "La pasión es la fuerza que impulsa nuestros sueños.",
+            "La valentía es enfrentar los miedos con determinación.",
+            "La amabilidad es el lenguaje del corazón.",
+            "La gratitud es la llave que abre la puerta de la felicidad.",
+            "La honestidad es un tesoro que nunca se devalúa.",
+            "La paciencia es la virtud de los sabios.",
+            "La perseverancia lleva al éxito.",
+            "La confianza en uno mismo es el primer paso hacia el logro.",
+            "La vida es un lienzo en blanco, píntala con colores brillantes.",
+            "La amistad es el hilo dorado que une corazones.",
+            "La curiosidad es la chispa de la creatividad.",
+            "La compasión es un regalo que puedes dar todos los días.",
+            "La gratitud es la actitud que cambia todo.",
+            "La pasión es el motor que impulsa la vida.",
+            "La alegría se multiplica cuando se comparte.",
+            "La confianza en uno mismo es el primer paso hacia el éxito.",
+            "La belleza está en todas partes, solo debes buscarla.",
+            "La generosidad ilumina el mundo.",
+            "El amor es la fuerza más poderosa del universo.",
+            "La paciencia es una virtud que conduce al éxito.",
+            "La vida es un regalo, vívela con pasión.",
+            "La esperanza es el faro que guía nuestro camino.",
+            "La risa es la mejor medicina.",
+            "La amistad es un tesoro que vale la pena cuidar.",
+            "La comprensión es la base de una relación sólida.",
+            "La humildad es la llave de la sabiduría.",
+            "La determinación te llevará lejos en la vida.",
+            "La gratitud transforma lo que tienes en suficiente.",
+            "La empatía nos hace más humanos.",
+            "La paz comienza con una sonrisa.",
+            "La vida es un viaje, disfruta del viaje.",
+            "La perseverancia es la clave del éxito.",
+            "El amor es la fuerza que une a todas las cosas.",
+            "La paciencia es la virtud de los sabios.",
+            "La creatividad es la expresión del alma.",
+            "La amabilidad es un acto de amor.",
+            "La generosidad llena el corazón de alegría.",
+            "La vida es un regalo precioso, cuídala.",
+            "La belleza está en todas partes, solo debes mirar.",
+            "La confianza en uno mismo es el primer paso hacia el éxito.",
+            "La gratitud es la llave que abre la puerta de la felicidad.",
+            "La vida es un viaje, disfruta del viaje.",
+            "La valentía es enfrentar los miedos con determinación.",
+            "La esperanza es el faro que guía nuestro camino.",
+            "La sonrisa es el mejor maquillaje que puedes llevar.",
+            "La humildad es la verdadera grandeza.",
+            "El amor es el puente que une a las personas.",
+            "La empatía nos hace más humanos.",
+            "La paciencia es una virtud que conduce al éxito.",
+            "La pasión es la chispa que enciende los sueños.",
+            "La amistad es un tesoro que perdura para siempre.",
+            "La generosidad es la clave de la abundancia.",
+            "La creatividad es el arte de la imaginación.",
+            "La gratitud es la actitud que cambia todo.",
+            "La vida es un regalo, vívela con alegría.",
+            "La confianza en uno mismo es la clave del éxito.",
+            "La perseverancia es el camino hacia el logro.",
+            "La belleza está en todas partes, solo debes observar.",
+            "La amabilidad es un idioma que todos pueden entender.",
+            "La generosidad es un regalo que se da a sí mismo.",
+            "La paz comienza con una sonrisa.",
+            "La empatía nos conecta a todos como seres humanos.",
+            "La vida es un lienzo en blanco, píntala con colores brillantes.",
+            "La esperanza es el faro que guía nuestro camino.",
+            "La determinación te llevará a donde quieras ir.",
+            "El amor es la fuerza más poderosa del universo.",
+            "La gratitud es la actitud que cambia todo.",
+            "La vida es un regalo, vívela al máximo.",
+            "La comprensión es la base de todas las relaciones.",
+            "La paciencia es una virtud que conduce al éxito.",
+            "La belleza está en el corazón de quien mira.",
+            "La confianza en uno mismo es el primer paso hacia el éxito.",
+            "La alegría se multiplica cuando se comparte.",
+            "La amistad es un tesoro que vale la pena cuidar.",
+            "La vida es un viaje, disfruta del viaje.",
+            "La humildad es la verdadera grandeza.",
+            "La creatividad es la expresión del alma.",
+            "La amabilidad es un acto de amor.",
+            "La generosidad llena el corazón de alegría.",
+            "La vida es un regalo precioso, cuídala.",
+            "La belleza está en todas partes, solo debes mirar.",
+        ];
+
+        function barajarArray(array) {
+            const arrayBarajado = [...array];
+            for (let i = arrayBarajado.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [arrayBarajado[i], arrayBarajado[j]] = [arrayBarajado[j], arrayBarajado[i]];
+            }
+            return arrayBarajado;
+        }
+
+
+        const frasesBarajadas = barajarArray(frasesLindas);
+
+        frasesBarajadas[0] = "Puedes venir aqui y leer las frases cada que vez que quieras..."
+
+
+
+        var typed = new Typed('#element2', {
+            strings: ['De tu amigo!', 'Para Yurle ❤️'],
+            typeSpeed: 100,
+        });
+        var typed = new Typed('#element', {
+            strings: frasesBarajadas,
+            typeSpeed: 100,
+            loop: true,
+        });
+    </script>
+</body>
+
+</html>
+<!-- Código: Daniel Arteaga de Faster Academy-->

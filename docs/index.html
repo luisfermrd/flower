@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="es">
+<!-- Síguenos en todas las redes como: -->
+<!-- Faster Academy-->
+<!-- Código: Daniel Arteaga de Faster Academy-->
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flower</title>
+    <style>
+        :root {
+            --color1: #000;
+            --color2: #fa2c71;
+            --color3: #e91f64;
+            --color4: #f1f1f1;
+            --color5: #fff;
+            --color6: #dce00b;
+            --color7: #c7bb07;
+            --color8: #ff2d75;
+            --color9: #F23B00;
+        }
+
+        .container-flower{
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            width: 100vw;
+            top: 0;
+            left: 0;
+            z-index: 100;
+        }
+
+        .flower {
+            height: 200px;
+            width: 200px;
+            margin: 200px auto;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            position: relative;
+            /* Fondo negro para toda la página */
+
+            /* Agrega una animación de pulsación */
+            animation: pulsate 10s infinite;
+        }
+
+        /*Síguenos en todas las redes como:*/
+        /*Faster Academy*/
+        /*Código: Daniel Arteaga de Faster Academy*/
+        .text-above,
+        .text-below {
+            position: absolute;
+            text-align: center;
+            color: #fff;
+            /* Color del texto */
+            font-size: 25px;
+            /* Tamaño del texto */
+        }
+
+        .text-above {
+            top: 60px;
+            /* Ajusta la posición vertical del texto arriba de la flor */
+        }
+
+        .text-below {
+            bottom: 60px;
+            /* Ajusta la posición vertical del texto debajo de la flor */
+        }
+
+        @keyframes pulsate {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            50% {}
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .mid {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+
+            background: radial-gradient(circle, #000, #ff5e00, #000);
+
+            z-index: 4;
+
+            background-size: 5px 5px;
+
+            filter: drop-shadow(0 0 8px #682600);
+        }
+
+        /*Síguenos en todas las redes como:*/
+        /*Faster Academy*/
+        /*Código: Daniel Arteaga de Faster Academy*/
+        .Petal1 {
+            position: absolute;
+            left: 40px;
+            z-index: 3;
+
+            width: 120px;
+            height: 30px;
+            border-radius: 50%;
+
+            background: radial-gradient(circle, #ff5e00, #ffbb00);
+
+            filter: drop-shadow(0 0 5px #e05200);
+        }
+
+        .Petal1.p1 {
+            transform: rotate(22.5deg);
+        }
+
+        .Petal1.p2 {
+            transform: rotate(67.5deg);
+        }
+
+        .Petal1.p3 {
+            transform: rotate(110.5deg);
+        }
+
+        .Petal1.p4 {
+            transform: rotate(157.5deg);
+        }
+
+        .Petal2 {
+            position: absolute;
+            left: 0;
+            z-index: 2;
+
+            width: 200px;
+            height: 40px;
+            border-radius: 50%;
+
+            background: radial-gradient(circle, #ff5e00, #fbd702);
+
+            filter: drop-shadow(0 0 5px #e05200);
+        }
+
+        .Petal2.p2 {
+            transform: rotate(90deg);
+        }
+
+        .Petal2.p3 {
+            transform: rotate(45deg);
+        }
+
+        .Petal2.p4 {
+            transform: rotate(135deg);
+        }
+
+        .Petal3 {
+            position: absolute;
+            left: 0px;
+            z-index: 1;
+
+            width: 200px;
+            height: 40px;
+            border-radius: 50%;
+
+            background: radial-gradient(circle, #ff5e00, #fbd702);
+
+            filter: drop-shadow(0 0 2px #fbd702);
+        }
+
+        /*Síguenos en todas las redes como:*/
+        /*Faster Academy*/
+        /*Código: Daniel Arteaga de Faster Academy*/
+        .Petal3.p1 {
+            transform: rotate(22.5deg);
+        }
+
+        .Petal3.p2 {
+            transform: rotate(67.5deg);
+        }
+
+        .Petal3.p3 {
+            transform: rotate(110.5deg);
+        }
+
+        .Petal3.p4 {
+            transform: rotate(157.5deg);
+        }
+
+
+
+
+
+
+
+
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: var(--color1);
+        }
+
+        body .container {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        body .container .bubbles {
+            position: relative;
+            display: flex;
+        }
+
+        body .container .bubbles span {
+            position: relative;
+            min-width: 30px;
+            height: 30px;
+            background: var(--color2);
+            box-shadow: 0 0 0 10px var(--color3), 0 0 50px var(--color4), 0 0 100px var(--color5);
+            margin: 0 4px;
+            border-radius: 50%;
+            -webkit-animation: animate 15s linear infinite;
+            animation: animate 15s linear infinite;
+            -webkit-animation-duration: calc(75s / var(--i));
+            animation-duration: calc(75s / var(--i));
+        }
+
+        body .container .bubbles span:nth-child(even) {
+            background: var(--color6);
+            box-shadow: 0 0 0 10px var(--color7), 0 0 50px var(--color8), 0 0 100px var(--color9);
+        }
+
+        @-webkit-keyframes animate {
+            0% {
+                transform: translateY(100vh) scale(0);
+            }
+
+            100% {
+                transform: translateY(-10vh) scale(1);
+            }
+        }
+
+        @keyframes animate {
+            0% {
+                transform: translateY(100vh) scale(0);
+            }
+
+            100% {
+                transform: translateY(-10vh) scale(1);
+            }
+        }
+
+        /*# sourceMappingURL=styles.css.map */
+    </style>
+</head>
+
+<body>
+
+
+
+    <main class="container">
+        <div class="container-flower">
+            <div class="text-above" id="element2">Te perdiste bb</div>
+            <!-- <div class="flower">
+                <div class="mid">
+                </div>
+                <div class="Petal1 p1">
+                </div>
+                <div class="Petal1 p2">
+                </div>
+                <div class="Petal1 p3">
+                </div>
+                <div class="Petal1 p4">
+                </div>
+                <div class="Petal2 p1">
+                </div>
+                <div class="Petal2 p2">
+                </div>
+                <div class="Petal2 p3">
+                </div>
+                <div class="Petal2 p4">
+                </div>
+                <div class="Petal3 p1">
+                </div>
+                <div class="Petal3 p2">
+                </div>
+                <div class="Petal3 p3">
+                </div>
+                <div class="Petal3 p4">
+                </div>
+            </div> -->
+            <div class="text-below" id="element"></div>
+        </div>
+        <div class="bubbles">
+            <span style="--i:1"></span>
+            <span style="--i:12"></span>
+            <span style="--i:23"></span>
+            <span style="--i:19"></span>
+            <span style="--i:6"></span>
+            <span style="--i:13"></span>
+            <span style="--i:1"></span>
+            <span style="--i:10"></span>
+            <span style="--i:5"></span>
+            <span style="--i:24"></span>
+            <span style="--i:34"></span>
+            <span style="--i:2"></span>
+            <span style="--i:11"></span>
+            <span style="--i:30"></span>
+            <span style="--i:14"></span>
+            <span style="--i:4"></span>
+            <span style="--i:18"></span>
+            <span style="--i:16"></span>
+            <span style="--i:25"></span>
+            <span style="--i:2"></span>
+            <span style="--i:26"></span>
+            <span style="--i:31"></span>
+            <span style="--i:28"></span>
+            <span style="--i:12"></span>
+            <span style="--i:27"></span>
+            <span style="--i:10"></span>
+            <span style="--i:11"></span>
+            <span style="--i:12"></span>
+            <span style="--i:13"></span>
+            <span style="--i:14"></span>
+            <span style="--i:16"></span>
+            <span style="--i:30"></span>
+            <span style="--i:19"></span>
+            <span style="--i:10"></span>
+            <span style="--i:15"></span>
+            <span style="--i:24"></span>
+            <span style="--i:34"></span>
+            <span style="--i:22"></span>
+        </div>
+    </main>
+
+
+    
+</body>
+
+</html>
+<!-- Código: Daniel Arteaga de Faster Academy-->
